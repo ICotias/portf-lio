@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iago · Portfólio de Desenvolvimento Mobile</title>
+<meta name="description" content="Portfólio de Iago. Aplicativos mobile e produtos digitais, com estudos de caso de cada projeto." />
+<style>
+  :root{
+    --purple:#6C63FF; --purple-d:#5148e0; --admin:#FF6B35; --family:#00BCD4;
+    --ink:#0F172A; --ink-2:#334155; --muted:#64748B;
+    --bg:#F6F7FB; --surface:#FFFFFF; --line:#E7EAF0;
+    --shadow:0 10px 40px -12px rgba(15,23,42,.18);
+    --shadow-sm:0 4px 18px -8px rgba(15,23,42,.20);
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{padding:92px 0}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
+  h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.12;margin:12px 0 14px}
+  .lead{font-size:clamp(16px,2vw,19px);color:var(--ink-2);max-width:640px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,247,251,.82);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.01em}
+  .brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--purple),var(--admin));display:grid;place-items:center;color:#fff;font-size:15px;box-shadow:var(--shadow-sm)}
+  .navlinks{display:flex;gap:28px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+  .navlinks a:hover{color:var(--purple)}
+  @media(max-width:640px){.navlinks{display:none}}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:96px 0 40px}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(680px 420px at 82% -10%,rgba(108,99,255,.20),transparent 60%),radial-gradient(560px 420px at 6% 15%,rgba(255,107,53,.12),transparent 60%);pointer-events:none}
+  .hero .wrap{position:relative;max-width:820px}
+  .hero .hi{font-weight:700;color:var(--muted);font-size:17px}
+  .hero h1{font-size:clamp(36px,6vw,64px);font-weight:850;letter-spacing:-.03em;line-height:1.02;margin-top:6px}
+  .hero h1 .grad{background:linear-gradient(120deg,var(--purple),var(--admin));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{margin-top:22px;font-size:20px;color:var(--ink-2);max-width:620px}
+  .cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s ease,box-shadow .15s ease}
+  .btn-primary{background:var(--purple);color:#fff;box-shadow:0 12px 30px -10px rgba(108,99,255,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  .socials{display:flex;gap:10px;margin-left:6px}
+  .socials a{width:42px;height:42px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow-sm);font-weight:700;font-size:13px;color:var(--ink-2);transition:transform .15s ease}
+  .socials a:hover{transform:translateY(-2px);color:var(--purple)}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .proj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column}
+  .proj:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .thumb{position:relative;aspect-ratio:16/10;background:#0B1020;overflow:hidden}
+  .thumb video,.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb .accent{position:absolute;left:0;top:0;bottom:0;width:6px}
+  .pbody{padding:24px 24px 26px}
+  .ptag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+  .proj h3{font-size:21px;letter-spacing:-.01em;margin-bottom:8px}
+  .proj p{font-size:14.8px;color:var(--muted);margin-bottom:16px}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .tag{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-weight:700;font-size:12.5px;color:var(--ink-2)}
+  .plink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:var(--purple);margin-top:auto}
+  .plink:hover{gap:12px}
+  /* em breve */
+  .proj.soon{opacity:.9}
+  .proj.soon .thumb{background:linear-gradient(135deg,#eceeffea,#f4f2ff);display:grid;place-items:center}
+  .soon-badge{position:absolute;top:14px;right:14px;background:#0B1020;color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;z-index:2}
+  .soon .ph{font-size:44px;opacity:.5}
+
+  /* ABOUT */
+  .about{background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:56px 40px;box-shadow:var(--shadow-sm)}
+  .about h2{margin-top:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .chips .tag{background:var(--bg)}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact h2{margin-bottom:10px}
+  .contact .lead{margin:0 auto 26px}
+
+  footer{background:#0B1020;color:#c7cce0;padding:44px 0;text-align:center;font-size:13.5px}
+  footer .brand{justify-content:center;color:#fff;margin-bottom:12px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="logo">IC</span> Iago Cotias</div>
+    <div class="navlinks">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <a class="btn btn-primary" href="#projetos" style="padding:10px 18px;font-size:14px">Ver projetos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <p class="hi">Olá, eu sou o Iago 👋</p>
+    <h1>Eu construo <span class="grad">aplicativos</span> que as pessoas usam de verdade.</h1>
+    <p class="sub">Desenvolvedor mobile focado em produtos completos, do primeiro protótipo à publicação. Aqui você encontra meus projetos, cada um com seu estudo de caso.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+      <a class="btn btn-ghost" href="#contato">Fale comigo</a>
+    </div>
+  </div>
+</header>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:44px">
+      <span class="eyebrow">Projetos</span>
+      <h2>Estudos de caso</h2>
+      <p class="lead">Cada projeto tem uma página própria com o problema, a solução, as telas e a tecnologia por trás.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- HOMECARE -->
+      <article class="proj reveal">
+        <div class="thumb">
+          <span class="accent" style="background:var(--purple)"></span>
+          <video src="media/homecare_teaser.mp4" poster="media/homecare_teaser.webp" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="pbody">
+          <span class="ptag">App de saúde</span>
+          <h3>HomeCare</h3>
+          <p>Plataforma de cuidado domiciliar que conecta a empresa, os enfermeiros em campo e as famílias dos pacientes. Registros em tempo real, escalas, sinais vitais e transparência total.</p>
+          <div class="stack">
+            <span class="tag">React Native</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Expo</span>
+          </div>
+          <a class="plink" href="https://homecare-lp.netlify.app/" target="_blank" rel="noopener">Ver estudo de caso →</a>
+        </div>
+      </article>
+
+      <!-- JV ARAUJO -->
+      <article class="proj reveal">
+        <div class="thumb">
+          <span class="accent" style="background:var(--admin)"></span>
+          <video src="media/jvaraujo_teaser.mp4" poster="media/jvaraujo_teaser.webp" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="pbody">
+          <span class="ptag">Site / Portfólio</span>
+          <h3>JV Araujo</h3>
+          <p>Site portfólio para João Victor, editor de vídeo e videomaker. Uma vitrine de edição, motion e conteúdo para redes sociais, com foco em impacto visual.</p>
+          <div class="stack">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Vite</span>
+          </div>
+          <a class="plink" href="https://jvaraujo.site" target="_blank" rel="noopener">Visitar site →</a>
+        </div>
+      </article>
+
+      <!-- CLUB DELIRIUM -->
+      <article class="proj reveal">
+        <div class="thumb">
+          <span class="accent" style="background:#FF2E93"></span>
+          <img src="media/delirium_cover.webp" alt="Club Delirium">
+        </div>
+        <div class="pbody">
+          <span class="ptag">App iOS e Android</span>
+          <h3>Club Delirium</h3>
+          <p>App de clube de benefícios publicado nas lojas. Descontos, sorteios, eventos e acesso exclusivo, para transformar o jeito de comprar, comer, beber e se divertir.</p>
+          <div class="stack">
+            <span class="tag">React Native</span>
+            <span class="tag">Expo</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:auto">
+            <a class="plink" style="margin-top:0" href="https://apps.apple.com/br/app/club-delirium/id6738162026" target="_blank" rel="noopener">App Store →</a>
+            <a class="plink" style="margin-top:0" href="https://play.google.com/store/apps/details?id=app.clubdelirium" target="_blank" rel="noopener">Google Play →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- HOTEL W4 -->
+      <article class="proj reveal">
+        <div class="thumb">
+          <span class="accent" style="background:#1E86C0"></span>
+          <img src="media/w4_cover.webp" alt="Hotel W4">
+        </div>
+        <div class="pbody">
+          <span class="ptag">Site / Hotelaria</span>
+          <h3>Hotel W4</h3>
+          <p>Landing page do Hotel W4, em Irecê na Bahia. Reservas pelo WhatsApp, uma página para cada quarto e as fotos reais do hotel.</p>
+          <div class="stack">
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">TypeScript</span>
+          </div>
+          <a class="plink" href="https://w4-sable.vercel.app" target="_blank" rel="noopener">Visitar site →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" style="padding-top:20px">
+  <div class="wrap">
+    <div class="about reveal">
+      <span class="eyebrow">Sobre</span>
+      <h2>Do protótipo à loja</h2>
+      <p class="lead">Trabalho o produto inteiro: interface seguindo as diretrizes da Apple, backend em nuvem, sincronização em tempo real e publicação. Gosto de resolver problemas reais e de deixar a experiência simples para quem usa.</p>
+      <div class="chips">
+        <span class="tag">React Native</span>
+        <span class="tag">Expo</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">Node</span>
+        <span class="tag">Zustand</span>
+        <span class="tag">React Navigation</span>
+        <span class="tag">Design iOS (HIG)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="wrap contact">
+    <span class="eyebrow">Contato</span>
+    <h2>Vamos conversar?</h2>
+    <p class="lead">Aberto a freelas, projetos e oportunidades. É só chamar.</p>
+    <div class="cta" style="justify-content:center">
+      <a class="btn btn-primary" href="https://wa.me/5575992288842" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:iagocotias10@gmail.com">E-mail</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/iago-cotias/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/ICotias" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://instagram.com/iago_cotias" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="logo">IC</span> Iago Cotias</div>
+    <div class="fnav" style="display:flex;gap:24px;justify-content:center;margin:4px 0 18px;font-weight:600;font-size:14.5px">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div>© 2026 Iago Cotias. Feito com HTML, CSS e um pouco de café.</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

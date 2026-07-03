@@ -67,6 +67,19 @@
   .tag{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-weight:700;font-size:12.5px;color:var(--ink-2)}
   .plink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:var(--purple);margin-top:auto}
   .plink:hover{gap:12px}
+  /* capa booking engine (mockup em código) */
+  .be-mock{position:absolute;inset:0;background:linear-gradient(150deg,#3d2c1d,#2b2115);display:flex;flex-direction:column;justify-content:center;gap:10px;padding:26px 30px}
+  .be-mock .be-title{color:#c2a15c;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .be-mock .be-search{display:flex;gap:8px}
+  .be-mock .be-field{flex:1;background:#fffdf6;border-radius:8px;padding:8px 10px;font-size:10.5px;color:#8a7c64;font-weight:600}
+  .be-mock .be-field b{display:block;color:#2b2115;font-size:11.5px;margin-top:2px}
+  .be-mock .be-btn{background:#c2a15c;color:#2b2115;border-radius:8px;padding:8px 14px;font-size:11.5px;font-weight:800;display:flex;align-items:center}
+  .be-mock .be-room{background:#fffdf6;border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}
+  .be-mock .be-room span{font-size:11.5px;font-weight:700;color:#2b2115}
+  .be-mock .be-room small{display:block;font-size:9.5px;color:#8a7c64;font-weight:600}
+  .be-mock .be-price{color:#3d2c1d;font-size:13px;font-weight:800}
+  .be-mock .be-price em{font-style:normal;font-size:9px;color:#8a7c64;display:block;text-align:right}
+
   /* em breve */
   .proj.soon{opacity:.9}
   .proj.soon .thumb{background:linear-gradient(135deg,#eceeffea,#f4f2ff);display:grid;place-items:center}
@@ -133,7 +146,7 @@
       <article class="proj reveal">
         <div class="thumb">
           <span class="accent" style="background:var(--purple)"></span>
-          <video src="media/homecare_teaser.mp4" poster="media/homecare_teaser.webp" autoplay muted loop playsinline preload="metadata"></video>
+          <img src="media/homecare_hero.webp" alt="HomeCare">
         </div>
         <div class="pbody">
           <span class="ptag">App de saúde</span>
@@ -156,13 +169,15 @@
           <video src="media/jvaraujo_teaser.mp4" poster="media/jvaraujo_teaser.webp" autoplay muted loop playsinline preload="metadata"></video>
         </div>
         <div class="pbody">
-          <span class="ptag">Site / Portfólio</span>
+          <span class="ptag">Plataforma web</span>
           <h3>JV Araujo</h3>
-          <p>Site portfólio para João Victor, editor de vídeo e videomaker. Uma vitrine de edição, motion e conteúdo para redes sociais, com foco em impacto visual.</p>
+          <p>Plataforma completa para o videomaker João Victor. Landing sob medida em dark e laranja, portfólio de vídeos editável pelo próprio João e uma página de galeria com o histórico dividido entre horizontais e reels. A área do cliente tem login, dashboard e aprovação de entregas com comentário. O painel do João faz upload de mídias em lote, cadastro de clientes por convite e portfólio em cinco slots.</p>
           <div class="stack">
             <span class="tag">React</span>
             <span class="tag">TypeScript</span>
-            <span class="tag">Vite</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Google Calendar</span>
           </div>
           <a class="plink" href="https://jvaraujo.site" target="_blank" rel="noopener">Visitar site →</a>
         </div>
@@ -207,6 +222,37 @@
             <span class="tag">TypeScript</span>
           </div>
           <a class="plink" href="https://w4-sable.vercel.app" target="_blank" rel="noopener">Visitar site →</a>
+        </div>
+      </article>
+
+      <!-- BOOKING ENGINE -->
+      <article class="proj reveal">
+        <div class="thumb">
+          <span class="accent" style="background:#c2a15c;z-index:2"></span>
+          <div class="be-mock" aria-hidden="true">
+            <span class="be-title">Hotel Horizonte · Reservas</span>
+            <div class="be-search">
+              <div class="be-field">Check-in <b>12 jul</b></div>
+              <div class="be-field">Check-out <b>15 jul</b></div>
+              <div class="be-btn">Buscar</div>
+            </div>
+            <div class="be-room">
+              <span>Suíte Vista Mar <small>Última unidade disponível</small></span>
+              <span class="be-price">R$ 780<em>fim de semana +30%</em></span>
+            </div>
+          </div>
+        </div>
+        <div class="pbody">
+          <span class="ptag">Demo técnica / Hotelaria</span>
+          <h3>Booking Engine</h3>
+          <p>Motor de reservas de hotel funcional, construído sem framework e sem backend. Tarifas dinâmicas com preço noite a noite, painel do hotel com mapa de disponibilidade, prevenção de overbooking com confirmação atômica e simulação das três estratégias de integração com OTAs. A lógica de negócio é coberta por 42 testes automatizados.</p>
+          <div class="stack">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript puro</span>
+            <span class="tag">42 testes</span>
+          </div>
+          <a class="plink" href="https://booking-engine-demo.vercel.app" target="_blank" rel="noopener">Ver demonstração →</a>
         </div>
       </article>
 

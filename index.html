@@ -59,6 +59,8 @@
   .thumb{position:relative;aspect-ratio:16/10;background:#0B1020;overflow:hidden}
   .thumb video,.thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .thumb .accent{position:absolute;left:0;top:0;bottom:0;width:6px}
+  .thumb.thumb-logo{display:grid;place-items:center}
+  .thumb.thumb-logo img{width:auto;height:auto;max-width:52%;max-height:48%;object-fit:contain}
   .pbody{padding:24px 24px 26px}
   .ptag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
   .proj h3{font-size:21px;letter-spacing:-.01em;margin-bottom:8px}
@@ -128,6 +130,26 @@
     </div>
 
     <div class="grid">
+
+      <!-- LARA STORE -->
+      <article class="proj reveal">
+        <div class="thumb thumb-logo">
+          <span class="accent" style="background:#D09C34"></span>
+          <img src="media/lara-store-logo.png" alt="Lara Store">
+        </div>
+        <div class="pbody">
+          <span class="ptag">E-commerce</span>
+          <h3>Lara Store</h3>
+          <p>Loja de moda feminina migrada de protótipo estático pra um app React completo, com painel admin próprio: estoque com anti-overbooking, cupom, frete por CEP e financeiro. Fechamento do pedido pelo WhatsApp.</p>
+          <div class="stack">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Vite</span>
+          </div>
+          <a class="plink" href="larastore/index.html" target="_blank" rel="noopener">Ver estudo de caso →</a>
+        </div>
+      </article>
 
       <!-- HOMECARE -->
       <article class="proj reveal">
